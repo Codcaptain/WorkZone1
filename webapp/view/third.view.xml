@@ -1,0 +1,282 @@
+<mvc:View
+    controllerName="com.incture.project1.controller.third"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns:l="sap.ui.layout"
+    xmlns:table="sap.ui.table"
+>
+    <Page title="Sapphire solution" >
+        <content>
+        <Button text="ranpakfooter" press="onhelpdesk"/>
+            <VBox
+                fitContainer="true"
+                class="sapUiSmallMargin"
+            >
+                <l:Grid class=" sapUiTinyMarginTop sapUiTinyMarginBegin">
+                    <Label
+                        text="Company Name"
+                        design="Bold"
+                    />
+                    <Input
+                        placeholder="Enter your Company Name"
+                        width="45%"
+                    />
+                    <Label
+                        text="Tech Stack"
+                        design="Bold"
+                    />
+                    <ComboBox
+                        items="{myModel>/techstack}"
+                        selectionChange="onSelNoOftechCB"
+                        id="tech"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem text="{myModel>tech}" />
+                    </ComboBox>
+
+                    <Label
+                        text="Lookup"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aLookUp}"
+                        selectionChange="onSelLookUpCB"
+                        id="lookup"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>lookup}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Number of Receivers"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aNoOfReceivers}"
+                        selectionChange="onSelNoOfReceiversCB"
+                        id="receivers"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>receivers}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Data Transformation (Message Mapping)"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aDataTransformation}"
+                        selectionChange="onSelDataTransformationCB"
+                        id="messagemapping"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>dataTransformation}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Externalized Parameters"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aExternalizedParameters}"
+                        selectionChange="onSelExternalizedParametersCB"
+                        id="externalizedparameters"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>externalizedparameters}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Data Persistence in CPI/HCI"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aDataPersistente}"
+                        selectionChange="onSelDataPersistenteCB"
+                        id="dataPersistence"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>datapersistente}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Groovy/Java Script"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aGroovy}"
+                        selectionChange="onSelGroovyCB"
+                        id="groovy"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>groovy}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Data Validation in CPI"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aDataValidation}"
+                        selectionChange="onSelDataValidationCB"
+                        id="dataValidation"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            key="{myModel>value}"
+                            text="{myModel>datavalidation}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Error Handling"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aErrorHandling}"
+                        selectionChange="onSelErrorHandlingCB"
+                        id="errorhandling"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            text="{myModel>errorhandling}"
+                            key="{myModel>value}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Functional Complexity"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aFunctionalComplexity}"
+                        selectionChange="onSelFunctionalComplexityCB"
+                        id="functionalcomplexity"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            text="{myModel>functionalcomplexity}"
+                            key="{myModel>value}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Routing"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aRouting}"
+                        selectionChange="onSelRoutingCB"
+                        id="routing"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            text="{myModel>routing}"
+                            key="{myModel>value}"
+                        />
+                    </ComboBox>
+
+                    <Label
+                        text="Multicast/Subprocess"
+                        design="Bold"
+                        required="true"
+                    />
+                    <ComboBox
+                        items="{myModel>/aMulticast}"
+                        selectionChange="onSelMulticastCB"
+                        id="multicast"
+                        placeholder="choose One"
+                    >
+                        <core:ListItem
+                            text="{myModel>multicast}"
+                            key="{myModel>value}"
+                        />
+                    </ComboBox>
+                </l:Grid>
+
+                <!-- <List headerText="Products" headerLevel="H2" items="{
+                        path: '{}'
+                    }">
+                    <StandardListItem title="{Name}" counter="{Quantity}" />
+                </List> -->
+
+                <!-- <Table id="idTableUsers" items="{covid>/}" mode="SingleSelectMaster" selectionChange="onSelectUser">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Text text="Users Data" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <columns>
+                        <Column>
+                            <Text text="S.No" />
+                        </Column>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{covid>iso}" />
+                                <Text text="{covid>name}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table> -->
+            </VBox>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        id="idbtn"
+                        text="Submit"
+                        press="onSubmit"
+                        type="Accept"
+                    />
+                    <Button
+                        id="idreset"
+                        text="Reset"
+                        press="onReset"
+                        type="Accept"
+                    />
+                </contentRight>
+                <!-- onsubmit function is present in controller.js part  -->
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

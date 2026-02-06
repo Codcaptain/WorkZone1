@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+.mytextcolor{
+    color: rgb(165, 165, 233);
+}
+.mytext2{
+    color: red;
+}
+.mytextfont{
+    font-size:larger;
+    font-style: italic;
+}
+.bgcolor{
+    background-color: orange;
+}
+.bgimage{
+    width:100%;
+    background-image: url('../images/img3.jpg');
+}

@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.incture.project1.controller.ranpakui"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout">
+	<VBox justifyContent="Center" alignItems="Center" width="">
+		<HBox>
+			<TextArea id="subjectTextArea" placeholder="Enter Subject" rows="3" cols="200" width="100%" liveChange=".onTextChange" />
+		</HBox>
+		<HBox>
+			<TextArea id="descriptionTextArea" placeholder="Enter Description" rows="23" cols="200" width="100%" liveChange=".onTextChange" />
+		</HBox>
+		<HBox justifyContent="End" alignItems="End" width="98%">
+		<Button  id="submitButton" text="Submit" press="onsubmit" enabled="false"></Button>
+		</HBox>
+	</VBox>
+</mvc:View>
+
+ 

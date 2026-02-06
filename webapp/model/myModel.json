@@ -1,0 +1,185 @@
+{
+    "techstack": [
+        {
+            "tech": "Web (UI5)"
+        },
+        {
+            "tech": "iOS"
+        },
+        {
+            "tech": "Android"
+        },
+        {
+            "tech": "Hybrid App"
+        },
+        {
+            "tech": "Integration (CPI/PI)"
+        },
+        {
+            "tech": "JAVA Services"
+        },
+        {
+            "tech": "Workflows(BPM/BRM)"
+        },
+        {
+            "tech": "Reports(Web Reports/UI reports)"
+        },
+        {
+            "tech": "UX"
+        }
+    ],
+    "aLookUp": [
+        {
+            "lookup": "NA",
+            "value": 1
+        },
+        {
+            "lookup": "Upto 1",
+            "value": 2
+        },
+        {
+            "lookup": "Upto 3",
+            "value": 3
+        },
+        {
+            "lookup": "More than 3",
+            "value": 4
+        }
+    ],
+    "aNoOfReceivers": [
+        {
+            "receivers": "Upto 2",
+            "value":1
+        },
+        {
+            "receivers": "Upto 4",
+            "value":2
+        }
+    ],
+    "aDataTransformation": [
+        {
+            "dataTransformation": "Upto 25 fields",
+            "value":1
+        },
+        {
+            "dataTransformation": "More than 25-50 fields",
+            "value":2
+        },
+        {
+            "dataTransformation": "More than 50 fields",
+            "value":3
+        }
+    ],
+    "aExternalizedParameters": [
+        {
+            "externalizedparameters": "NA",
+            "value":1
+        },
+        {
+            "externalizedparameters": "Externalized parameters involved in the Process",
+            "value":2
+        },
+        {
+            "externalizedparameters": "Externalized parameters involved in the Process",
+            "value":3
+        }
+    ],
+    "aDataPersistente": [
+        {
+            "datapersistente": "NA",
+            "value":1
+        },
+        {
+            "datapersistente": "Only Write Variable are involved, with no Store Operation performed",
+            "value":2
+        },
+        {
+            "datapersistente": "Data store and write variables persist in CPI/HCI",
+            "value":3
+        }
+    ],
+    "aGroovy": [
+        {
+            "groovy": "Only property/Header are get/set in the script",
+            "value":1
+        },
+        {
+            "groovy": "Only property/Header are get/set in the script",
+            "value":2
+        },
+        {
+            "groovy": "Reading/creating payload in script",
+            "value":3
+        }
+    ],
+    "aDataValidation": [
+        {
+            "datavalidation": "NA",
+            "value":1
+        },
+        {
+            "datavalidation": "4 fields data validation",
+            "value":2
+        },
+        {
+            "datavalidation": "Up to 5 fields data validation",
+            "value":3
+        }
+    ],
+    "aErrorHandling": [
+        {
+            "errorhandling": "Only property/Header are get/set in the script",
+            "value":1
+        },
+        {
+            "errorhandling": "Only property/Header are get/set in the script",
+            "value":2
+        },
+        {
+            "errorhandling": "Reading/creating payload in script",
+            "value":3
+        }
+    ],
+    "aFunctionalComplexity": [
+        {
+            "functionalcomplexity": "Low",
+            "value":1
+        },
+        {
+            "functionalcomplexity": "Medium",
+            "value":2
+        },
+        {
+            "functionalcomplexity": "High",
+            "value":3
+        }
+    ],
+    "aRouting": [
+        {
+            "routing": "Simple with upto 2 conditions",
+            "value":1
+        },
+        {
+            "routing": "Complex with Up to 4 routing conditions",
+            "value":2
+        },
+        {
+            "routing": "Complex with Up to 6 routing conditions",
+            "value":3
+        }
+    ],
+    "aMulticast": [
+        {
+            "multicast": "NA",
+            "value":1
+        },
+        {
+            "multicast": "Multicast with upto 3 branches",
+            "value":2
+        },
+        {
+            "multicast": "Multicast with up to 5 branches",
+            "value":3
+        }
+    ]
+}
