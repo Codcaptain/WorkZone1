@@ -1,4 +1,5 @@
 {
+    "project":"Ranpak",
     "techstack": [
         {
             "tech": "Web (UI5)"
@@ -181,5 +182,6 @@
             "multicast": "Multicast with up to 5 branches",
             "value":3
         }
-    ]
+    ],
+    "lookUpDescription":"We need to connect formatter for LookUp"
 }

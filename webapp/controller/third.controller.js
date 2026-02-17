@@ -3,13 +3,16 @@ sap.ui.define(
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
+    '../model/formatter',
   ],
-  function (BaseController, JSONModel, MessageBox, MessageToast) {
+  function (BaseController, JSONModel, MessageBox, MessageToast,formatter) {
     "use strict";
-
+    
     return BaseController.extend("com.incture.project1.controller.third", {
+      formatter:formatter,
       onInit: async function () {
+        
         try {
           var userInput = JSON.parse(localStorage.getItem("userInput"));
           this.getView().byId("lookup").setSelectedKey(userInput.lookup);
@@ -144,7 +147,8 @@ sap.ui.define(
       onSelLookUpCB: function (oEvent) {
 
         var selectedItem = oEvent.getParameter("selectedItem");
-
+        // localJsonModel=this.getOwnerComponent().getModel("localJsonModel");
+        // localJsonModel.getSelectedKey();
         var key = selectedItem.getKey(); // Get the key associated with the selected item
 
         console.log("Selected key:", key);

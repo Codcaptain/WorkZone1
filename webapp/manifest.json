@@ -62,7 +62,10 @@
       "myModel":{
         "type":"sap.ui.model.json.JSONModel",
         "uri":"model/myModel.json"
-      }
+      },
+      "localJsonModel":{
+        "type":"sap.ui.model.json.JSONModel"
+          }
     },
     "resources": {
       "css": [

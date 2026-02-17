@@ -11,6 +11,7 @@
 >
     <Page title="Sapphire solution" >
         <content>
+        <Label  text="to make visible on selection of Dropdown" design="Bold" visible="{path:'localJsonModel>/tech',formatter:'.formatter.formatterfnVisible'}"/>
         <Button text="ranpakfooter" press="onhelpdesk"/>
             <VBox
                 fitContainer="true"
@@ -18,6 +19,7 @@
             >
                 <l:Grid class=" sapUiTinyMarginTop sapUiTinyMarginBegin">
                     <Label
+                        id="idCompanyName"
                         text="Company Name"
                         design="Bold"
                     />
@@ -32,13 +34,15 @@
                     <ComboBox
                         items="{myModel>/techstack}"
                         selectionChange="onSelNoOftechCB"
-                        id="tech"
+                        id="idTechDropDown"
                         placeholder="choose One"
+                        selectedKey="{localJsonModel>/tech}"
                     >
-                        <core:ListItem text="{myModel>tech}" />
+                        <core:ListItem key="{myModel>tech}" text="{myModel>tech}" />
                     </ComboBox>
 
                     <Label
+                        id="idLookupField"
                         text="Lookup"
                         design="Bold"
                         required="true"
@@ -46,15 +50,15 @@
                     <ComboBox
                         items="{myModel>/aLookUp}"
                         selectionChange="onSelLookUpCB"
-                        id="lookup"
+                        id="idLookSelection"
                         placeholder="choose One"
+                        selectedKey="{localJsonModel>/value}"
                     >
                         <core:ListItem
                             key="{myModel>value}"
                             text="{myModel>lookup}"
                         />
                     </ComboBox>
-
                     <Label
                         text="Number of Receivers"
                         design="Bold"
@@ -258,6 +262,8 @@
                     </items>
                 </Table> -->
             </VBox>
+                   <Label design="Bold" text="to make lookup visible in ui" visible="{path:'localJsonModel>/value', formatter:'.formatter.formatterfnforfont'}"/>
+
         </content>
         <footer>
             <Bar>
