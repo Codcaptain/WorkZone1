@@ -14,109 +14,132 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.13.5",
       "toolsId": "87d4a29b-c4f6-4818-93d5-6e16e5abfe7d"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
     },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": false,
-    "dependencies": {
-      "minUI5Version": "1.124.0",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.ui.table": {},
-        "sap.ushell": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
+    "dataSources": {
+      "invoiceRemote": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
         "settings": {
-          "bundleName": "com.incture.project1.i18n.i18n"
-        }
-      },
-    
-      "myModel":{
-        "type":"sap.ui.model.json.JSONModel",
-        "uri":"model/myModel.json"
-      },
-      "localJsonModel":{
-        "type":"sap.ui.model.json.JSONModel"
-          }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "viewPath": "com.incture.project1.view",
-        "controlAggregation": "pages",
-        "controlId": "idApp"
-      },
-      "routes": [
-        {
-          "name":"thirdroot",
-          "pattern": "",
-          "target":[
-            "thirdtarget"
-          ]
-        },
-        {
-          "name": "ranpakroot",
-          "pattern": "ranpakroot",
-          "target":[
-            "ranpaktarget"
-          ]
-        }
-
-      ],
-      "targets": {
-       
-        "thirdtarget":{
-          "viewId": "idthird",
-          "viewName": "third",
-          "viewLevel": 1
-        },
-        "ranpaktarget":{
-          "viewId": "idranpak",
-          "viewName": "ranpakui",
-          "viewLevel": 2
+          "odataVersion": "2.0"
         }
       }
-   },
-    "rootView": {
-      "viewName": "com.incture.project1.view.App",
-      "type": "XML",
-      "id": "idApp"
+    }
+  },
+    "sap.ui": {
+      "technology": "UI5",
+      "icons": {
+        "icon": "",
+        "favIcon": "",
+        "phone": "",
+        "phone@2": "",
+        "tablet": "",
+        "tablet@2": ""
+      },
+      "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+      }
+    },
+    "sap.ui5": {
+      "flexEnabled": false,
+      "dependencies": {
+        "minUI5Version": "1.124.0",
+        "libs": {
+          "sap.m": {},
+          "sap.ui.core": {},
+          "sap.f": {},
+          "sap.suite.ui.generic.template": {},
+          "sap.ui.comp": {},
+          "sap.ui.generic.app": {},
+          "sap.ui.table": {},
+          "sap.ushell": {}
+        }
+      },
+      "contentDensities": {
+        "compact": true,
+        "cozy": true
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "supportedLocales": ["", "de", "fr"], 
+            "bundleName": "com.incture.project1.i18n.i18n"
+          }
+        },
+        "myModel": {
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "model/myModel.json"
+        },
+        "localJsonModel": {
+          "type": "sap.ui.model.json.JSONModel"
+        },
+        "ODataService":{
+          "dataSource": "invoiceRemote",
+          "type":"sap.ui.model.odata.v2.ODataModel"
+        }
+      },
+      "resources": {
+        "css": [
+          {
+            "uri": "css/style.css"
+          }
+        ]
+      },
+      "routing": {
+        "config": {
+          "routerClass": "sap.m.routing.Router",
+          "viewType": "XML",
+          "viewPath": "com.incture.project1.view",
+          "controlAggregation": "pages",
+          "controlId": "idApp"
+        },
+        "routes": [
+          {
+            "name": "thirdroot",
+            "pattern": "",
+            "target": [
+              "thirdtarget"
+            ]
+          },
+          {
+            "name": "ranpakroot",
+            "pattern": "ranpakroot",
+            "target": [
+              "ranpaktarget"
+            ]
+          },
+          {
+            "name": "FormPage",
+            "pattern": "FormPage",
+            "target": [
+              "FormPageCreation"
+            ]
+          }
+        ],
+        "targets": {
+          "thirdtarget": {
+            "viewId": "idthird",
+            "viewName": "third",
+            "viewLevel": 1
+          },
+          "ranpaktarget": {
+            "viewId": "idranpak",
+            "viewName": "ranpakui",
+            "viewLevel": 2
+          },
+          "FormPageCreation": {
+            "viewId": "idFormPage",
+            "viewName": "FormUi",
+            "viewLevel": 3
+          }
+        }
+      },
+      "rootView": {
+        "viewName": "com.incture.project1.view.App",
+        "type": "XML",
+        "id": "idApp"
+      }
     }
   }
-}

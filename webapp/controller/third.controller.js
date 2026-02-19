@@ -12,7 +12,8 @@ sap.ui.define(
     return BaseController.extend("com.incture.project1.controller.third", {
       formatter:formatter,
       onInit: async function () {
-        
+        this.oi18n=this.getView().getModel("i18n").getResourceBundle();
+        // this.oi18n.getResourceBundle().getText("")
         try {
           var userInput = JSON.parse(localStorage.getItem("userInput"));
           this.getView().byId("lookup").setSelectedKey(userInput.lookup);
@@ -43,6 +44,9 @@ sap.ui.define(
       },
       onhelpdesk:function(){
         this.getOwnerComponent().getRouter().navTo("ranpakroot");
+      },
+      onFormDisplay:function(){
+        this.getOwnerComponent().getRouter().navTo("FormPage");
       },
       onReset: function() {
         localStorage.removeItem("userInput"); 
