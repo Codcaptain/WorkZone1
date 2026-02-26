@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Dialog
+        id="idDetailDisplay"
+        title="Details Display"
+    >
+    	<l:Grid
+		binding="{localJsonModel>/oGetDetails}"
+		class="sapUiSmallMarginTop"
+		defaultSpan="L7 M8 S6"
+        hSpacing="2"
+        vSpacing="2">
+		<l:content>
+        <HBox justifyContent="SpaceBetween" >
+			 <Label
+                text="ProductName:"
+                design="Bold"
+            />
+				<Text text="{localJsonModel>ProductName}" class="sapUiSmallMarginRight" textAlign="End" width="100%"/>
+            </HBox>
+            <HBox justifyContent="SpaceBetween" >
+			 <Label
+                text="QuantityPerUnit:"
+                design="Bold" 
+            />
+				<Text text="{localJsonModel>QuantityPerUnit}" textAlign="End" width="100%" class="sapUiLargeMarginRight" />
+            </HBox>
+            <HBox justifyContent="SpaceBetween" >
+			 <Label
+                text="UnitPrice:"
+                design="Bold"  
+            />
+				<Text text="{localJsonModel>UnitPrice}" textAlign="End" width="100%"/>
+            </HBox>
+            <Label 
+            text=""
+            design="Bold"
+            ></Label>
+		</l:content>
+	</l:Grid>
+
+        <endButton>
+            <Button
+                text="Close"
+                press="onClosedialog"
+                type="Emphasized"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

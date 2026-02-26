@@ -10,12 +10,10 @@
 		focusable="true">
 	<Table id="idProductsTable"
 		inset="false"
-		items="{
-			path: 'localJsonModel>/products',
-			sorter: {
-				path: 'Name'
-			}
-		}">
+		selectionChange="handleSelectionChange"
+		mode="SingleSelectMaster"
+		items="{localJsonModel>/products}"
+		>
 		<headerToolbar>
 			<OverflowToolbar>
 				<content>
@@ -53,29 +51,24 @@
 		</infoToolbar>
 		<columns>
 			<Column
-				width="12em">
+				>
 				<Text text="Product" />
 				
 			</Column>
 			<Column
-				minScreenWidth="Tablet"
-				demandPopin="true">
+				>
 				<Text text="Supplier" />
 			</Column>
 			<Column
-				minScreenWidth="Desktop"
-				demandPopin="true"
-				hAlign="End">
+				>
 				<Text text="Dimensions" />
 			</Column>
 			<Column
-				minScreenWidth="Desktop"
-				demandPopin="true"
-				hAlign="Center">
+				>
 				<Text text="Weight" />
 			</Column>
 			<Column
-				hAlign="End">
+				>
 				<Text text="Price" />
 			</Column>
 		</columns>

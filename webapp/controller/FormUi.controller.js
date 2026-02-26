@@ -1,8 +1,9 @@
 sap.ui.define(
     [
         "sap/ui/core/mvc/Controller",
+        "sap/ui/core/Fragment",
     ],
-    function(Controller) {
+    function(Controller,Fragment) {
       "use strict";
   
       return Controller.extend("com.incture.project1.controller.FormUi", {
@@ -21,6 +22,29 @@ sap.ui.define(
               console.log(err)
             }
           })
+        },
+        handleSelectionChange: function(oEvent){
+          var sPath=oEvent.getParameter("listItem").getBindingContextPath();
+          var localJsonModel=this.getOwnerComponent().getModel("localJsonModel");
+          var oGetDetails=oEvent.getParameter("listItem").getBindingContext("localJsonModel").getObject();
+          localJsonModel.setProperty("/oGetDetails",oGetDetails)
+          console.log(oGetDetails);
+          if(!this.oDetailsDisplay){
+            this.oDetailsDisplay=Fragment.load({
+              id: this.getView().byId(),
+              name: "com.incture.project1.fragments.DetailPopup",
+              controller: this
+            }).then(function (oDialog){
+              this._oDialog=oDialog;
+              this.getView().addDependent(this._oDialog);
+              this._oDialog.open();
+            }.bind(this))
+          }else{
+            this._oDialog.open();
+          }
+        },
+        onClosedialog: function(){
+          this._oDialog.close();
         }
       });
     }
