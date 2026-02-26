@@ -45,6 +45,17 @@ sap.ui.define(
         },
         onClosedialog: function(){
           this._oDialog.close();
+        },
+        onSubmitLastCol:function(oEvent){
+          var oValue=oEvent.getSource().oParent.mAggregations.items[1].mProperties.value;
+          var localJsonModel=this.getOwnerComponent().getModel("localJsonModel");
+          var oInputLastName=localJsonModel.getProperty("/InputValue");
+          let arr=localJsonModel.getProperty("/products")
+          arr.map(items=>items.Lastname=oInputLastName);
+          if(oValue){
+            let finalResult=localJsonModel.getProperty("/products");
+            localJsonModel.setProperty("/Newproducts",finalResult)
+          }
         }
       });
     }

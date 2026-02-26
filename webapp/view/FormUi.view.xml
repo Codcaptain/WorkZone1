@@ -8,6 +8,13 @@
 		width="100%"
 		vertical="true"
 		focusable="true">
+		<HBox >
+		<Label text="LastName:" design="Bold" class="sapUiSmallMargin">
+		</Label>
+		<Input class="sapUiSmallMargin" value="{localJsonModel>/InputValue}" ></Input>
+
+		<Button text="Submit LastName" press="onSubmitLastCol" class="sapUiSmallMargin"></Button>
+		</HBox>
 	<Table id="idProductsTable"
 		inset="false"
 		selectionChange="handleSelectionChange"
@@ -61,7 +68,7 @@
 			</Column>
 			<Column
 				>
-				<Text text="Dimensions" />
+				<Text text="QuantityPerUnit" />
 			</Column>
 			<Column
 				>
@@ -69,7 +76,10 @@
 			</Column>
 			<Column
 				>
-				<Text text="Price" />
+				<Text text="UnitPrice" />
+			</Column>
+			<Column >
+			<Text text="LastName"></Text>
 			</Column>
 		</columns>
 		<items>
@@ -86,7 +96,8 @@
 						number="{localJsonModel>ReorderLevel}"
 						/>
 					<ObjectNumber
-						unit="{localJsonModel>UnitsInStock}" />
+						number="{localJsonModel>UnitsInStock}" />
+					<ObjectIdentifier title="{localJsonModel>Lastname}"></ObjectIdentifier>
 				</cells>
 			</ColumnListItem>
 		</items>
